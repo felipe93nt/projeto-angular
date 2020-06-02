@@ -1,0 +1,20 @@
+<div class="col-sm-3 col-sm-offset-4 frame">
+    <ul >
+        <li *ngFor="let item of conversa">
+            <p>{{ item.user }} disse:</p>
+            {{item.msg}} - {{ item.data | date: 'dd/MM/yyyy'}}
+        </li>
+       
+    </ul>
+    <div>
+        <div class="msj-rta macro">                        
+            <div class="text text-r" style="background:whitesmoke !important">
+                <input class="mytext" (keyup.enter)="submit()" [(ngModel)]="inputMsg" placeholder="Digite uma mensagem"/>
+            </div> 
+
+        </div>
+        <div style="padding:10px;">
+            <span (click)="submit()" style="cursor: pointer;">Enviar</span>
+        </div>                
+    </div>
+</div>       
