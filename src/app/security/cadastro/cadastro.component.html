@@ -1,1 +1,38 @@
 <header appEstiloHeader></header>
+
+<h2 class="form-signin-heading">Cadastro
+</h2>
+<div class="container mt-3">
+    <div class="barra-seletora">
+        <div class="bx-pager bx-default-pager my-2">
+
+            <div (click)="valorSeletor='dadosPessoais'" class="bx-pager-item active">
+                <a class="bx-pager-link" [ngClass]="valorSeletor == 'dadosPessoais'?'ativo':'inativo'" data-slide-index="0">Dados</a>
+                <div class="arrow">
+
+                </div>
+            </div>
+
+            <div (click)="valorSeletor='conta'" class="bx-pager-item">
+                <a class="bx-pager-link" data-slide-index="1" [ngClass]="(valorSeletor == 'conta')?'ativo':'inativo'">Conta</a>
+                <div class="arrow">
+
+                </div>
+            </div>
+
+            <div (click)="valorSeletor='confirmar'" class="bx-pager-item-2">
+                <a class="bx-pager-link" data-slide-index="2" [ngClass]="(valorSeletor == 'confirmar')?'ativo':'inativo'">Confimar </a>
+                <div class="arrow">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="elementoSelecionado">
+        <app-dados-pessoais *ngIf="valorSeletor == 'dadosPessoais'"></app-dados-pessoais>
+
+        <app-dados-conta *ngIf="valorSeletor == 'conta'"></app-dados-conta>
+
+        <app-dados-confirmar *ngIf="valorSeletor == 'confirmar'"></app-dados-confirmar>
+    </div>
+</div>

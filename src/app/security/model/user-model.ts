@@ -1,23 +1,20 @@
-import { UserProfileModel } from './user-profile-model.enum';
-import { UserBankAccountModel } from './user-bank-account-model';
+import { UserAccountModel } from './user-account-model.enum';
 
 export interface UserModel {
 
-    nome?:string;
+    nome?: string;
 
-    sobrenome?:string;
+    sobrenome?: string;
 
-    email?:string;
-    
-    usuario?:string;
-    
-    senha?:string;
+    email?: string;
 
-    dtNascimento?:Date;
+    usuario?: string;
 
-    conta?:UserBankAccountModel[];
+    senha?: string;
 
-    perfil?:UserProfileModel;
+    dtNascimento?: Date;
+
+    conta?: UserAccountModel;
 
 
 }

@@ -1,0 +1,60 @@
+<form [formGroup]='formulario' (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-sm-6 mt-4">
+            <div class="row">
+                <label class="my-auto col-sm-3">Nome</label>
+                <input type="text" formControlName="nome" class="form-control col-sm-8" [class.is-invalid]="!this.formulario.controls.nome.valid && this.formulario.controls.nome.touched">
+                <div class="col-sm-6 mx-auto invalid-feedback" *ngIf="this.formulario.controls.nome.errors && this.formulario.controls.nome.touched">
+                    <small>campo nome não pode ser vazio</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mt-4">
+            <div class="row">
+                <label class="my-auto col-sm-3">Sobrenome</label>
+                <input type="text" formControlName="sobrenome" class="form-control col-sm-8" [class.is-invalid]="!this.formulario.controls.sobrenome.valid && this.formulario.controls.sobrenome.touched">
+                <div class="col-sm-6 mx-auto invalid-feedback" *ngIf="this.formulario.controls.sobrenome.errors && this.formulario.controls.sobrenome.touched">
+                    <small>campo sobrenome não pode ser vazio</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 mt-4">
+            <div class="row">
+                <label class="my-auto col-sm-3">Email</label>
+                <input type="text" formControlName="email" class="form-control col-sm-8" [class.is-invalid]="!this.formulario.controls.email.valid && this.formulario.controls.email.touched">
+                <div class="col-sm-6 mx-auto invalid-feedback" *ngIf="this.formulario.controls.email.errors && this.formulario.controls.email.touched">
+                    <small>email inválido</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mt-4">
+            <div class="row">
+                <label class="my-auto col-sm-3">Senha</label>
+                <input type="password" formControlName="senha" class="form-control col-sm-8" [class.is-invalid]="!this.formulario.controls.senha.valid && this.formulario.controls.senha.touched">
+                <div class="col-sm-6 mx-auto invalid-feedback" *ngIf="this.formulario.controls.senha.errors && this.formulario.controls.senha.touched">
+                    <small>A senha deve ter pelo menos 8 caracteres</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 mt-4">
+            <div class="row">
+                <label class="my-auto col-sm-5">Data de Nascimento</label>
+                <input type="date" formControlName="dtNascimento" class="data form-control col-sm-6">
+            </div>
+        </div>
+        <div class="col-sm-6 mt-4">
+            <div class="row">
+                <label class="my-auto col-sm-3">Usuário</label>
+                <input type="text" formControlName="usuario" class="form-control col-sm-8">
+            </div>
+        </div>
+    </div>
+    <div class="botao-salvar">
+        <button type="submit" class="btn  mt-4">Salvar</button>
+    </div>
+</form>

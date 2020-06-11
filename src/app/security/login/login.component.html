@@ -13,13 +13,12 @@
 
     <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <h2 class="form-signin-heading">Login
-            <h4><strong>CHATBOT AIB</strong></h4>
         </h2>
 
         <div class="form-row">
             <div class="col-md-12 mb-3">
                 <label>Usuário</label>
-                <input type="text" formControlName="email" class="form-control" [class.is-invalid]="!this.loginForm.controls.email.valid && this.loginForm.controls.email.touched">
+                <input type="text" formControlName="email" class="form-control" [ngStyle]="{'color':'#009BD6'}" [class.is-invalid]="!this.loginForm.controls.email.valid && this.loginForm.controls.email.touched">
                 <div class="invalid-feedback" [hidden]="!this.loginForm.controls.email.errors?.email && this.loginForm.controls.email.touched">
                     O valor digitado não é um email.
                 </div>
@@ -27,23 +26,16 @@
                     O campo não pode ser nulo.
                 </div>
             </div>
-
         </div>
         <div class="form-row">
             <div class="col-md-12 ">
                 <label>Senha</label>
-                <input type="password" formControlName="senha" class="form-control " [class.is-invalid]="!this.loginForm.controls.senha.valid && this.loginForm.controls.senha.touched">
+                <input type="password" formControlName="senha" class="form-control" [ngStyle]="{'color':'#009BD6'}" [class.is-invalid]="!this.loginForm.controls.senha.valid && this.loginForm.controls.senha.touched">
                 <div class="invalid-feedback" *ngIf="this.loginForm.controls.senha.errors && this.loginForm.controls.senha.touched">
                     {{ this.loginForm.controls.senha.errors?.required ? "O campo não pode ser nulo." : "O valor precisa ter no minimo 5 dígitos" }}
                 </div>
-
             </div>
-
         </div>
-
-
-
-        <button type="submit" class="btn btn-lg btn-primary btn-block mt-5" type="submit">Login</button>
+        <button type="submit" class="btn btn-lg btn-block mt-5">Login</button>
     </form>
-
 </div>

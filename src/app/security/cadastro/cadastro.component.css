@@ -1,0 +1,89 @@
+.row {
+    margin: 0;
+}
+
+h2 {
+    color: #009BD6;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+a {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 5px;
+    font-size: medium;
+}
+
+.container {
+    height: 350px;
+    padding: 0;
+    max-width: 70%;
+}
+
+.elementoSelecionado {
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 25px;
+    background-color: #006e964b;
+    height: fit-content;
+}
+
+.barra-seletora {
+    border-radius: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-image: linear-gradient(to bottom, #006d96, #006d96, #006d96, #006d96, #006d96, #006e97, #006e97, #006f98, #00709a, #01719b, #01739d, #02749f);
+}
+
+.bx-pager {
+    display: flex;
+    align-items: center;
+    height: 34px;
+}
+
+.bx-pager .bx-pager-item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex: 0 34%;
+}
+
+.bx-pager .bx-pager-item .bx-pager-link {
+    text-decoration: none;
+    flex: 1;
+    padding-left: 16px;
+    text-align: center;
+}
+
+.bx-pager-link:hover {
+    color: white;
+}
+
+.bx-pager .bx-pager-item .arrow {
+    border: solid #009BD6;
+    display: inline-block;
+    padding: 9px;
+    border-width: 0 3px 3px 0;
+    transform: translateY(15.5px) rotate(-45deg) skew(-15deg, -15deg) translateX(18px);
+}
+
+.bx-pager-item-2 {
+    text-decoration: none;
+    flex: 1;
+    padding-left: 16px;
+    text-align: center;
+    display: inline-block;
+    padding: 9px;
+    border-width: 0;
+}
+
+.ativo {
+    color: white;
+}
+
+.inativo {
+    color: #009BD6;
+}

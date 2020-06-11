@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "chatbot-aib",
+      "public": "dist/chatbot-aib",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

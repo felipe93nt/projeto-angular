@@ -1,0 +1,48 @@
+img {
+    background-size: contain;
+    cursor: pointer;
+    display: inline-flex;
+    height: 10%;
+    margin: auto;
+    background-position-y: 1px;
+    width: 50%;
+    margin-top: 20px;
+}
+
+.card-body {
+    padding: 10px;
+    height: fit-content;
+}
+
+.card {
+    background-color: #00719a7c;
+    border-radius: 10px;
+    border-color: #009BD6;
+    border-width: 3px;
+    height: fit-content;
+}
+
+.cards {
+    height: fit-content;
+}
+
+input,
+.btn {
+    width: 100%;
+    border-radius: 10px;
+    border-color: rgb(0, 137, 190);
+    border-width: 2px;
+    color: white;
+    background-image: linear-gradient(to top, #006d96, #006d96, #006d96, #006d96, #006d96, #006e97, #006e97, #006f98, #00709a, #01719b, #01739d, #02749f);
+}
+
+h5 {
+    margin: auto;
+    font-size: small;
+    color: whitesmoke;
+}
+
+p {
+    font-size: small;
+    color: whitesmoke;
+}

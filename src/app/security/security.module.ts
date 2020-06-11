@@ -9,15 +9,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { EstiloHeaderDirective } from './diretivas-security/estilo-header.directive';
-
-
-
-
+import { EstiloHeaderDirective } from './../diretivas-security/estilo-header.directive';
+import { DadosPessoaisComponent } from './cadastro/dados-pessoais/dados-pessoais.component';
+import { DadosContaComponent } from './cadastro/dados-conta/dados-conta.component';
+import { DadosConfirmarComponent } from './cadastro/dados-confirmar/dados-confirmar.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, CadastroComponent, EstiloHeaderDirective],
+  declarations: [LoginComponent, CadastroComponent, EstiloHeaderDirective, DadosPessoaisComponent, DadosContaComponent, DadosConfirmarComponent],
   imports: [
     CommonModule,
     SecurityRoutingModule,
@@ -27,8 +26,9 @@ import { EstiloHeaderDirective } from './diretivas-security/estilo-header.direct
 
   ],
   exports:[
+    EstiloHeaderDirective
   ],
-  providers:[SecurityService]
+  providers: [SecurityService]
 
 })
 export class SecurityModule { }

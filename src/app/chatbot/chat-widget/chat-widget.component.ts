@@ -1,50 +1,61 @@
-import { Component, OnInit } from '@angular/core';
-import { discardPeriodicTasks } from '@angular/core/testing';
+import { ChatbotClientService } from './../../home/chatbot-client.service';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+
+export interface Message {
+  remetente?: string;
+  mensagem: string;
+  data?: Date;
+}
 
 @Component({
   selector: 'app-chat-widget',
   templateUrl: './chat-widget.component.html',
   styleUrls: ['./chat-widget.component.css']
 })
+
+
 export class ChatWidgetComponent implements OnInit {
+@ViewChild('scrollMe') private myScrollContainer: ElementRef;
 
-  constructor() { }
+  msg: string;
+  resultados: Message[];
 
+  constructor(private chatBoot: ChatbotClientService) {
+    this.initBoot();
+  }
   ngOnInit(): void {
   }
 
-  conversa:any[] = []
-
-  inputMsg:string;
-
-  submit(){
-    if(!this.inputMsg){
-      return;
-    }
-    let m = {msg:this.inputMsg,user:"Ipsum",data:Date.now()}
-    this.conversa.push(m);
-    
-
-    this.respostaBot(m);
-
-    this.inputMsg = "";
+  initBoot() {
+    this.resultados = [];
+    this.chatBoot.getResponse('oi')
+      .subscribe((lista: any) => {
+        lista.result.fulfillment.value?.forEach((element) => {
+          this.resultados.push({ remetente: 'boot', mensagem: element.speech, data: lista.timestamp });
+          console.log(lista.result.fulfillment.value);
+        });
+      });
   }
 
-  delay(ms: number) {
-    return new Promise( resolve => setTimeout(resolve, ms) );
+  sendMessage() {
+    this.resultados.push({ remetente: 'eu', mensagem: this.msg, data: new Date() });
+    this.chatBoot.getResponse(this.msg)
+      .subscribe((lista: any) => {
+        lista.result.fulfillment.messages.forEach((element) => {
+          this.resultados.push({ remetente: 'boot', mensagem: element.speech, data: lista.timestamp });
+        })
+      })
+
+    this.msg = '';
   }
 
-  async respostaBot(m){ 
-    await this.delay(500);
-    if(m.msg == "Olá"){
-      this.conversa.push({msg:"Olá, como vai você?",user:"Robô",data:Date.now()});
-      return;
-    }
-    if(m.msg == "Qual o seu nome?"){
-      this.conversa.push({msg:"Eu sou a Inteligencia Artificial BIA",user:"BIA",data:Date.now()});
-      return;
-    }
-
+  ngAfterViewChecked() {
+    this.scrollToBottom();
   }
 
+  scrollToBottom(): void {
+    try {
+      this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+    } catch (err) { }
+  }
 }

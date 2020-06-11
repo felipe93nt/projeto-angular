@@ -1,0 +1,87 @@
+input,
+.btn {
+    border-radius: 10px;
+    border-color: #009BD6;
+    border-width: 2px;
+    color: white;
+    background-image: linear-gradient(to top, #006d96, #006d96, #006d96, #006d96, #006d96, #006e97, #006e97, #006f98, #00709a, #01719b, #01739d, #02749f);
+}
+
+input:hover {
+    color: rgb(192, 192, 192);
+    ;
+}
+
+input:focus {
+    color: rgb(192, 192, 192);
+    ;
+}
+
+h2,
+.invalid-feedback,
+input,
+.btn {
+    color: #009BD6;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.btn {
+    width: 100%;
+}
+
+.btn:hover {
+    color: white;
+}
+
+h2,
+label,
+.invalid-feedback {
+    color: #009BD6;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+input,
+.btn {
+    border-color: #009BD6;
+    border-width: 2px;
+    color: rgb(192, 192, 192);
+    background-image: linear-gradient(to top, #006d96, #006d96, #006d96, #006d96, #006d96, #006e97, #006e97, #006f98, #00709a, #01719b, #01739d, #02749f);
+}
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid:hover {
+    background-color: #006d96;
+    border-color: #7cb1d4;
+    color: #cfdbdf;
+    background-image: url("./../../../../assets/Warning-blue.png");
+}
+
+.botao-salvar {
+    margin: auto;
+    width: fit-content;
+}
+
+small {
+    color: blue;
+    font-size: small;
+}
+
+label {
+    font-size: medium;
+    font-weight: bold;
+    color: #006f98;
+}
+
+.data {
+    text-align: center;
+}
+
+input::placeholder {
+    color: #009BD6;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+}

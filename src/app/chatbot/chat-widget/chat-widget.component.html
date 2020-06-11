@@ -1,20 +1,32 @@
-<div class="col-sm-3 col-sm-offset-4 frame">
-    <ul >
-        <li *ngFor="let item of conversa">
-            <p>{{ item.user }} disse:</p>
-            {{item.msg}} - {{ item.data | date: 'dd/MM/yyyy'}}
-        </li>
-       
-    </ul>
-    <div>
-        <div class="msj-rta macro">                        
-            <div class="text text-r" style="background:whitesmoke !important">
-                <input class="mytext" (keyup.enter)="submit()" [(ngModel)]="inputMsg" placeholder="Digite uma mensagem"/>
-            </div> 
+<div class="accordion">
+    <div class="card">
+        <div class="card-header" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <h2 [ngStyle]="{'color':'rgb(0,158,215)'}">Chatbot <i class="fa fa-bars float-right my-2" aria-hidden="true"></i></h2>
 
         </div>
-        <div style="padding:10px;">
-            <span (click)="submit()" style="cursor: pointer;">Enviar</span>
-        </div>                
+        <div id="collapseOne" class="collapse hidde" aria-labelledby="headingOne">
+            <div class="card-body">
+                <div class="chatbox">
+                    <div class="col-sm-12 frame">
+                        <ul class="scroller">
+
+                            <li *ngFor="let item of resultados" [ngStyle]="{'background-color':item.remetente == 'eu'?'#00B8DC':'#95B1AE'}">
+                                <div>
+                                    <p class="mb-1">{{ item.remetente }} disse:</p>
+                                    <p>{{item.mensagem}} - {{ item.data | date: 'dd/MM/yyyy'}}</p>
+                                </div>
+
+                            </li>
+                        </ul>
+                        <div class="mensagem mx-auto">
+                            <input class="mytext mx-2" (keyup.enter)="sendMessage()" [(ngModel)]="msg" placeholder="Digite uma mensagem" />
+                            <div>
+                                <button class="btn" (click)="sendMessage()" style="cursor: pointer;"><i class="fa fa-paper-plane" [ngStyle]="{'color':'rgb(0,158,215)'}"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-</div>       

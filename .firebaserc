@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "chatbot-aib": {
+      "hosting": {
+        "chatbot-aib": [
+          "chatbot-aib"
+        ]
+      }
+    }
+  }
+}

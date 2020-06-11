@@ -1,3 +1,5 @@
+import { SecurityService } from './../services/security.service';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroComponent implements OnInit {
 
-  constructor() { }
+  valorSeletor: string;
+  constructor(private securityService: SecurityService) {
 
-  ngOnInit(): void {
   }
 
+  ngOnInit() {
+    this.securityService.seletor.subscribe(obj => {
+      this.valorSeletor = obj;
+      console.log(this.valorSeletor);
+    });
+    }
 }

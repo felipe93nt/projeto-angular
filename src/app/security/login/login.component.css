@@ -1,23 +1,21 @@
 .wrapper {
-    margin-top: 40px;
-    margin-bottom: 80px;
+    margin-top: 10px;
+    margin-bottom: 0px;
 }
 
 .form-signin {
     max-width: 380px;
     padding: 15px 35px 45px;
-    margin: 0 auto;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: auto;
+    border-color: rgb(7, 159, 230);
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 20px;
 }
 
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
-    margin-bottom: 30px;
-}
-
-.form-signin .checkbox {
-    font-weight: normal;
+    margin-bottom: 20px;
 }
 
 .form-signin .form-control {
@@ -36,4 +34,43 @@
 
 .form-signin input[type="text"] {
     margin-bottom: -1px;
+}
+
+input,
+.btn {
+    border-radius: 20px;
+    border-color: #009BD6;
+    border-width: 2px;
+    color: white;
+    background-image: linear-gradient(to top, #006d96, #006d96, #006d96, #006d96, #006d96, #006e97, #006e97, #006f98, #00709a, #01719b, #01739d, #02749f);
+}
+
+.row {
+    margin: 0;
+}
+
+h2,
+label,
+.invalid-feedback {
+    color: #009BD6;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h2 {
+    text-align: center;
+}
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+    background-color: #006d96;
+    border-color: #7cb1d4;
+    color: #f0f9fc;
+}
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid:hover {
+    background-color: #006d96;
+    border-color: #7cb1d4;
+    color: #cfdbdf;
+    background-image: url("./../../../assets/Warning-blue.png");
 }
